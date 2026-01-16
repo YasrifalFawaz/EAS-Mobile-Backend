@@ -5,6 +5,7 @@ const os = require('os');
 
 const authRoutes = require('./routes/auth');
 const bookingRoutes = require('./routes/bookings');
+const userRoutes = require('./routes/users');
 
 const app = express();
 const PORT = 3000;
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 
 app.use('/api', authRoutes);
 app.use('/api', bookingRoutes);
+app.use('/api/users', userRoutes);
 
 // 🔹 fungsi untuk ambil IP lokal
 function getLocalIP() {
